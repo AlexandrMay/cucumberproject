@@ -9,15 +9,16 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @CucumberOptions(
-        features = "C:/STORAGE/cucumberproject/src/test/java/features",
-        glue = {"StepDefination"},
+        features = {"C:/STORAGE/cucumberproject/src/test/java/features"},
+        glue = {"stepDefinations"},
+        tags = "@SmokeTest",
         format = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty",
                 "json:target/cucumber-reports/CucumberTestReport.json",
                 "rerun:target/cucumber-reports/rerun.txt"
         })
-public class Runner {
+public class TestRunner {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
@@ -26,7 +27,7 @@ public class Runner {
     }
 
     @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
-    public void Login (CucumberFeatureWrapper cucumberFeature) {
+    public void feature (CucumberFeatureWrapper cucumberFeature) {
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
 
