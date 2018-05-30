@@ -1,4 +1,4 @@
-Feature: Application Login
+Feature: Account Login
 
   @SmokeTest
   Scenario: Home page default login

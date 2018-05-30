@@ -9,7 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @CucumberOptions(
-        features = {"C:/STORAGE/cucumberproject/src/test/java/features"},
+        features = {"/Users/woxapp/Documents/cucumberproject/src/test/java/features"},
         glue = {"stepDefinations"},
         tags = "@SmokeTest",
         format = {
